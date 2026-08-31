@@ -21,3 +21,9 @@ variable "enable_nat_gateway" {
   type        = bool
   default     = true
 }
+
+variable "state_bucket_name" {
+  description = "Name of the S3 bucket used for Terraform state storage"
+  type        = string
+  default     = "atmosly-terraform-testing-state"
+}
