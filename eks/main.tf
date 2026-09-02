@@ -32,6 +32,8 @@ module "eks" {
 
   cluster_endpoint_public_access = true
 
+  cluster_enabled_log_types = []
+
   vpc_id     = data.terraform_remote_state.vpc.outputs.vpc_id
   subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnets
 
