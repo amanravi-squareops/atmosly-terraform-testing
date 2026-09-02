@@ -20,23 +20,18 @@ module "vpc" {
   name = var.name
   cidr = var.vpc_cidr
 
-  azs             = slice(data.aws_availability_zones.available.names, 0, 2)
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
-  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24"]
+  azs             = slice(data.aws_availability_zones.available.names, 0, var.az_count)
+  private_subnets = var.private_subnets
+  public_subnets  = var.public_subnets
 
-  # Cost controls per AD-141 testing ground rules: single NAT, no per-AZ NAT
   enable_nat_gateway     = var.enable_nat_gateway
-  single_nat_gateway     = true
-  one_nat_gateway_per_az = false
+  single_nat_gateway     = var.single_nat_gateway
+  one_nat_gateway_per_az = var.one_nat_gateway_per_az
 
   enable_dns_hostnames = true
   enable_dns_support   = true
 
-  tags = {
-    Project     = "atmosly-terraform-testing"
-    Scenario    = "A-baseline-vpc"
-    Environment = "test"
-  }
+  tags = var.tags
 }
 
 data "aws_availability_zones" "available" {

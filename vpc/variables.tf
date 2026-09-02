@@ -27,3 +27,43 @@ variable "state_bucket_name" {
   type        = string
   default     = "atmosly-terraform-testing-state"
 }
+
+variable "private_subnets" {
+  description = "CIDR blocks for private subnets"
+  type        = list(string)
+  default     = ["10.0.1.0/24", "10.0.2.0/24"]
+}
+
+variable "public_subnets" {
+  description = "CIDR blocks for public subnets"
+  type        = list(string)
+  default     = ["10.0.101.0/24", "10.0.102.0/24"]
+}
+
+variable "az_count" {
+  description = "Number of availability zones to spread subnets across"
+  type        = number
+  default     = 2
+}
+
+variable "single_nat_gateway" {
+  description = "Whether to use a single shared NAT gateway instead of one per AZ"
+  type        = bool
+  default     = true
+}
+
+variable "one_nat_gateway_per_az" {
+  description = "Whether to create one NAT gateway per AZ"
+  type        = bool
+  default     = false
+}
+
+variable "tags" {
+  description = "Tags applied to the VPC and its resources"
+  type        = map(string)
+  default = {
+    Project     = "atmosly-terraform-testing"
+    Scenario    = "A-baseline-vpc"
+    Environment = "test"
+  }
+}
