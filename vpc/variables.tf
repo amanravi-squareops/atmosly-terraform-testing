@@ -58,12 +58,12 @@
 #   default     = false
 # }
 
-# variable "tags" {
-#   description = "Tags applied to the VPC and its resources"
-#   type        = map(string)
-#   default = {
-#     Project     = "atmosly-terraform-testing"
-#     Scenario    = "A-baseline-vpc"
-#     Environment = "test"
-#   }
-# }
+variable "tags" {
+  description = "Tags applied to the VPC and its resources"
+  type        = map(string)
+  default = {
+    Project     = "atmosly-terraform-testing"
+    Scenario    = "A-baseline-vpc"
+    Environment = "test"
+  }
+}
