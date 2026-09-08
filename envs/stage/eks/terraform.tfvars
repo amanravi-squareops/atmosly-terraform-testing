@@ -1,4 +1,5 @@
-aws_region = "us-east-1"
+aws_region      = "us-east-1"
+assume_role_arn = "arn:aws:iam::767398031518:role/atmosly-tf-testing-role"
 
 cluster_name       = "atmosly-stage-eks"
 cluster_version    = "1.36"

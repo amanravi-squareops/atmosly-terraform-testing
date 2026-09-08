@@ -3,6 +3,11 @@ variable "aws_region" {
   type        = string
 }
 
+variable "assume_role_arn" {
+  description = "IAM role ARN to assume for provisioning"
+  type        = string
+}
+
 variable "name" {
   description = "Name prefix for the VPC and its resources"
   type        = string

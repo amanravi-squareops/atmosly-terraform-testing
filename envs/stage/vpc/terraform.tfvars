@@ -1,4 +1,5 @@
-aws_region = "us-east-1"
+aws_region      = "us-east-1"
+assume_role_arn = "arn:aws:iam::767398031518:role/atmosly-tf-testing-role"
 
 name     = "atmosly-stage-vpc"
 vpc_cidr = "10.1.0.0/16"
