@@ -18,3 +18,6 @@ tags = {
   Scenario    = "A-baseline-vpc"
   Environment = "test"
 }
+
+# test-variable = "test-value"
+# aman = "aman-value"
