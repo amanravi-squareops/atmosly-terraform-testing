@@ -5,6 +5,9 @@ terraform {
     region       = "us-east-1"
     encrypt      = true
     use_lockfile = true
-    role_arn     = "arn:aws:iam::767398031518:role/atmosly-tf-testing-role"
+
+    assume_role = {
+      role_arn = "arn:aws:iam::767398031518:role/atmosly-tf-testing-role"
+    }
   }
 }
