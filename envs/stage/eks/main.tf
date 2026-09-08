@@ -18,13 +18,13 @@ data "terraform_remote_state" "vpc" {
 
   config = {
     bucket = "atmosly-terraform-testing-state"
-    key    = "vpc/dev/terraform.tfstate"
+    key    = "vpc/stage/terraform.tfstate"
     region = "us-east-1"
   }
 }
 
 module "eks" {
-  source = "../../module"
+  source = "../../../modules/eks"
 
   cluster_name       = var.cluster_name
   cluster_version    = var.cluster_version
