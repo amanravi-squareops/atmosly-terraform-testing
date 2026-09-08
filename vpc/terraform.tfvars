@@ -13,11 +13,12 @@ one_nat_gateway_per_az = false
 
 state_bucket_name = "atmosly-terraform-testing-state"
 
+# test-variable = "test-value"
+# aman = "aman-value"
+
 tags = {
   Project     = "atmosly-terraform-testing"
   Scenario    = "A-baseline-vpc"
   Environment = "test"
 }
 
-# test-variable = "test-value"
-# aman = "aman-value"
