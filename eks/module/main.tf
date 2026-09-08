@@ -9,20 +9,6 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = var.aws_region
-}
-
-data "terraform_remote_state" "vpc" {
-  backend = "s3"
-
-  config = {
-    bucket = "atmosly-terraform-testing-state"
-    key    = "vpc/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 20.0"
@@ -34,8 +20,8 @@ module "eks" {
 
   cluster_enabled_log_types = []
 
-  vpc_id     = data.terraform_remote_state.vpc.outputs.vpc_id
-  subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnets
+  vpc_id     = var.vpc_id
+  subnet_ids = var.subnet_ids
 
   cluster_addons = {
     vpc-cni = {

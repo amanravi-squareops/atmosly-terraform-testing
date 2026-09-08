@@ -1,6 +1,6 @@
 aws_region = "us-east-1"
 
-# name     = "atmosly-tf-testing"
+name     = "atmosly-dev-vpc"
 vpc_cidr = "10.0.0.0/16"
 
 az_count        = 2
@@ -11,14 +11,8 @@ enable_nat_gateway     = true
 single_nat_gateway     = true
 one_nat_gateway_per_az = false
 
-state_bucket_name = "atmosly-terraform-testing-state"
-
-# test-variable = "test-value"
-# aman = "aman-value"
-
 tags = {
   Project     = "atmosly-terraform-testing"
   Scenario    = "A-baseline-vpc"
-  Environment = "test"
+  Environment = "dev"
 }
-

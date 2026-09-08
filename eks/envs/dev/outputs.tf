@@ -16,5 +16,5 @@ output "vpc_id" {
 }
 
 output "node_group_name" {
-  value = module.eks.eks_managed_node_groups["default"].node_group_id
+  value = module.eks.node_group_name
 }
