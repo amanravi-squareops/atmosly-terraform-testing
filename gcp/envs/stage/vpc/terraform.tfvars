@@ -1,4 +1,4 @@
-project_id = "your-gcp-project-id"
+project_id = "atmosly"
 region     = "us-central1"
 
 name = "atmosly-stage-vpc"
